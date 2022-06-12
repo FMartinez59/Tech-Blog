@@ -1,39 +1,56 @@
-<div class='row'>
-  <div class='card'>
-    <div class='card-header'>{{title}}</div>
-    <div class='card-body'>
-      <p class='card-text'>
-        {{content}}
-      </p>
-    </div>
-    <div class='card-footer text-muted'>
-      Posted by
-      {{user.username}}
-      on
-      {{createdAt}}
-    </div>
-  </div>
+<div class="row col-12">
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+              <h1 class="display-4">View Post</h1>
+              <p class="lead">Why people should by air instead of saving the trees.</p>
+            </div>
+          </div>
 </div>
+<div class = "row">
+                <div class="card mb-5">
+                    <h5 class="card-header">{{title}}</h5>
+                    <div class="card-body">
+                      <p class="card-text">{{body}}</p>
 
-<div class='row'>
-  <form id='comment-form'>
-    <textarea id='comment-text-area'></textarea>
-    <button id='comment-submit' data-id='{{id}}'>Submit Comment</button>
-  </form>
-</div>
-
-{{#each comments as |comment|}}
-  <div class='row'>
-    <div class='card'>
-      <div class='card-body'>
-        <p class='card-text'>{{comment.content}}</p>
-      </div>
-      <div class='card-footer text-muted'>
-        Posted by
-        {{comment.user.username}}
-        on
-        {{comment.createdAt}}
-      </div>
-    </div>
-  </div>
-{{/each}}
+                    </div>
+                    <div class="card-footer text-muted">
+                        Posted by {{user.username}} on {{format_date createdAt}}
+                      </div>
+                  </div>
+            </div>
+            <div class = "row">
+              <div class="card mb-3">
+                  <form id ="comment-form">
+                      <div class="card-header">
+                          Leave a comment.
+                      </div>
+                      <div class="card-body">
+                          <textarea class="form-control" id="comment-text" data-blogId="{{id}}"></textarea>
+                      </div>
+                      <div class="card-footer">
+                          <button id="comment-submit">Submit Comment</button>
+                          <button id="cancel">Cancel</button>
+                      </div>
+                  </form>
+                </div>
+            </div>
+            <div class = "row">
+              <div class="card mb-1">
+                      <div class="card-header">
+                          See what others think about this gem.
+                      </div>
+                </div>
+            </div>
+            <script src="/js/comment.js"></script>
+            {{#each Comments as |comment|}}
+            <div class = "row">
+                <div class="card">
+                    <div class="card-body">
+                      <p class="card-text">{{body}}</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Posted by {{user.username}} on {{format_date createdAt}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}

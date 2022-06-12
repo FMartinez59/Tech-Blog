@@ -1,9 +1,27 @@
-<div class='row'>
-  <form id='create-post-form'>
-    <input id='create-post-title' type='text' />
-    <textarea id='create-post-content'></textarea>
-    <button id='create-post-save-button'>Save Post</button>
-  </form>
+<div class="row col-12">
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+              <h1 class="display-4">New Post</h1>
+              <p class="lead">Go ahead. Express yourself.</p>
+            </div>
+          </div>
 </div>
-
-<script src='/js/post.js'></script>
+<div class = "row">
+                <form id ="create-post-form">
+                    <div class="card">
+                        <div class="card-header">
+                            Post Title
+                            <input class="form-control" id="create-post-title" type="text" placeholder="What are you calling this opus?">
+                        </div>
+                    <div class="card-body">
+                        <p>Post Content</p>
+                        <textarea class="form-control" id="create-post-content">If you got something to say, say it.</textarea>
+                    </div>
+                    <div class="card-footer">
+                        <button id="create-post-save">Save Post</button>
+                        <button id="cancel">Cancel</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+<script src="/js/post.js"></script>

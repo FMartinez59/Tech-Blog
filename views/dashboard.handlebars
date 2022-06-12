@@ -1,23 +1,24 @@
+<div class="jumbotron jumbotron-fluid">
+                  <div class="container">
+                  <h1 class="display-4">Dashboard</h1>
+                  <p class="lead">Just a dash of Tech Blog.</p>
+                </div>
 {{#if Posts}}
-  {{#each Posts as |post|}}
-    <div class='row'>
-      <div class='card'>
-        <div class='card-header'>{{post.title}}</div>
-        <div class='card-body'>
-          <p class='card-text'>
-            {{blog.content}}
-          </p>
-          <a href='/blogpage.html' class='btn btn-primary'>Go somewhere</a>
-        </div>
-        <div class='card-footer text-muted'>
-          <a href='/edit-blog'>Edit Blog</a>
-          <button id='delete-post-button'>Delete Post</button>
-        </div>
-      </div>
-    </div>
-  {{/each}}
+{{#each Posts as |post| }}
+<div class = "row">
+                <div class="card mb-3">
+                    <h5 class="card-header">{{post.title}}</h5>
+                    <div class="card-body">
+                      <p class="card-text">{{post.body}}</p>
+                      <a href="/blogs/{{post.id}}" class="">See more...</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                    <a href="/edit-post/{{post.id}}">Edit Post</a>
+                      </div>
+                  </div>
+            </div>
+{{/each}}
 {{/if}}
-
-<div class='row'>
-  <a id='add-post-link' href='/create-blog'>Add Post</a>
-</div>
+<div class="row">
+                      <a id="add-post-link" class="btn btn-secondary" href="create-blog">Add Post</a>
+                  </div>
