@@ -1,18 +1,22 @@
 <!-- Loop over each object in the projects array -->
+         <div class="row col-12">
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+              <h1 class="display-4">Tech Blog</h1>
+              <p class="lead">The Bloggiest Tech Blog of all time.</p>
+            </div>
+          </div>
 {{#each blogs as |blog| }}
- <div class="row">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
+<div class = "row">
+                <div class="card mb-3">
+                    <h5 class="card-header">{{blog.title}}</h5>
                     <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <p class="card-text">{{blog.body}}</p>
+                      <a href="/blogs/{{id}}" class="">See more...</a>
                     </div>
                     <div class="card-footer text-muted">
-                        Posted By Author on 5/20/2022
+                        Posted by {{blog.user.username}} on {{format_date blog.createdAt}}
                       </div>
                   </div>
-              </div>
+            </div>
 {{/each}}
