@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
+    // Serialaize data so the template can read it
     const blogs = postData.map((post) => post.get({ plain: true }));
     if (req.session.logged_in) {
       const userData = await User.findByPk(req.session.user_id, {
